@@ -5,6 +5,11 @@ CommitMsg:
   Imperative:
     enabled: true
     description: Check subject tense
+  CapitalizedSubject:
+    enabled: false
+  SubjectFormat:
+    enabled: true
+    description: Check subject format
 
 PrePush:
   BranchFormat:
