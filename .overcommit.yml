@@ -1,0 +1,12 @@
+CommitMsg:
+  CommitTag:
+    enabled: true
+    description: Check subject tag
+  Imperative:
+    enabled: true
+    description: Check subject tense
+
+PrePush:
+  BranchFormat:
+    enabled: true
+    description: Check branch naming
