@@ -1,3 +1,8 @@
+PreCommit:
+  OvercommitConfig:
+    enabled: true
+    description: Check lab hooks are configured
+
 CommitMsg:
   CommitTag:
     enabled: true
