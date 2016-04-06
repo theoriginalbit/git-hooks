@@ -2,6 +2,9 @@ PreCommit:
   OvercommitConfig:
     enabled: true
     description: Check lab hooks are configured
+  UsesHlint:
+    enabled: true
+    description: Check HLint is used if required
 
 CommitMsg:
   CommitTag:
