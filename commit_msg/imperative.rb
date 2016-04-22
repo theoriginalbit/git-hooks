@@ -20,6 +20,7 @@ module Overcommit::Hook::CommitMsg
       drys       drying       dryed
       ends       ending       ended
       enforces   enforcing    enforced
+      enhanced
       enqueues   enqueuing    enqueued
       extracts   extracting   extracted
       finishes   finishing    finished
