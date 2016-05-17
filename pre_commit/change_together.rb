@@ -11,7 +11,9 @@ module Overcommit::Hook::PreCommit
       if not modified.empty?
         unmodified = to_check.select { |f| not relative.include? f }
         if not unmodified.empty?
-          return [:fail, "Modified #{modified} but not #{unmodified}"]
+          msg = "Modified #{modified} but not #{unmodified}"
+          msg += "; #{config['message']}" if config['message']
+          return [:fail, msg]
         end
       end
 
