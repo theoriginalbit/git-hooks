@@ -1,6 +1,7 @@
 module Overcommit::Hook::PrePush
   class BranchFormat < Base
     TAGS = ['feature', 'enhance', 'fix', 'looks', 'speed', 'quality', 'doc', 'config', 'test']
+    IGNORED = ['master', 'development']
 
     def run
       messages = pushed_refs.map(&method(:invalid_msg)).compact
@@ -11,7 +12,7 @@ module Overcommit::Hook::PrePush
 
     def invalid_msg(pushed_ref)
       ref = pushed_ref.remote_ref.sub(/^refs\/heads\//, '')
-      if ref == "master"
+      if IGNORED.include?(ref)
         return nil
       elsif ref !~ /^[a-z]+\/[a-z]+(?:-[a-z]+)*$/
         return "Remote ref should be of the form feature/something-new, not #{ref}"
