@@ -6,7 +6,7 @@ module Overcommit::Hook::PreCommit
     def run
       if File.exist?("./test/unit/")
         test_result = run_unit_test
-        return test_result.nil? ? :pass : [:fail, test_result.join("\n")]
+        return test_result.nil? ? :pass : [:fail, test_result]
       else
         return [:fail, "Mocha unit test directory doesn't exist"]
       end
@@ -19,7 +19,7 @@ module Overcommit::Hook::PreCommit
       if status.success?
         return nil
       else
-        return ["Error: #{stdout}"]
+        return stdout
       end
     end
   end
