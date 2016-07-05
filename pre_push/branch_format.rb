@@ -14,7 +14,7 @@ module Overcommit::Hook::PrePush
       ref = pushed_ref.remote_ref.sub(/^refs\/heads\//, '')
       if IGNORED.include?(ref)
         return nil
-      elsif ref !~ /^[a-z]+\/[a-z]+(?:-[a-z]+)*$/
+      elsif ref !~ /^[a-z]+\/[a-z0-9]+(?:-[a-z0-9]+)*$/
         return "Remote ref should be of the form feature/something-new, not #{ref}"
       elsif not TAGS.any? { |tag| ref.start_with? tag }
         return "Remote ref should start with one of: " + TAGS.join(" ")
