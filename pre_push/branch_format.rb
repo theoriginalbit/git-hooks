@@ -15,7 +15,7 @@ module Overcommit::Hook::PrePush
       if IGNORED.include?(ref)
         return nil
       elsif ref !~ /^[a-z]+\/[a-z0-9]+(?:-[a-z0-9]+)*$/
-        return "Remote ref should be of the form feature/something-new, not #{ref}"
+        return "Remote ref should be of the form 'tag/hyphen-separated-description', not '#{ref}'"
       elsif not TAGS.any? { |tag| ref.start_with? tag }
         return "Remote ref should start with one of: " + TAGS.join(" ")
       end
