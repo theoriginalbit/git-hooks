@@ -1,14 +1,14 @@
 require 'open3'
 
 module Overcommit::Hook::PreCommit
-  # Runs mocha unit test
+  # Runs config validation
   class ConfigValidation < Base
     def run
       if File.exist?("./config-validator/index.js")
         test_result = run_config_validation
         return test_result.nil? ? :pass : [:fail, test_result]
       else
-        return [:fail, "Mocha unit test directory doesn't exist"]
+        return [:fail, "Config validation file does not exist"]
       end
     end
 
