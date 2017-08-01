@@ -1,7 +1,7 @@
 module Overcommit::Hook::CommitMsg
   # Ensures the commit message follows a specific format.
   class CommitTag < Base
-    TAGS = ['NEW', 'ENHANCE', 'FIX', 'LOOKS', 'SPEED', 'QUALITY', 'DOC', 'CONFIG', 'TEST']
+    TAGS = ['NEW', 'ENHANCE', 'FIX', 'LOOKS', 'SPEED', 'QUALITY', 'DOC', 'CONFIG', 'TEST', 'TEMP']
 
     def run
       error_msg = validate_pattern(commit_message_lines[0])
