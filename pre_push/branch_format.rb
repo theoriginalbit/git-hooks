@@ -1,6 +1,6 @@
 module Overcommit::Hook::PrePush
   class BranchFormat < Base
-    TAGS = ['feature', 'enhance', 'fix', 'looks', 'speed', 'quality', 'doc', 'config', 'test']
+    TAGS = ['feature', 'enhance', 'fix', 'looks', 'speed', 'quality', 'doc', 'config', 'test', 'temp']
     IGNORED = ['master', 'development']
 
     def run
